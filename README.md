@@ -7,18 +7,16 @@ Le code source de notre programme BabyShark est sur deux fichiers:
 -Le fichier "test.py" contenant le code source pour l'interface graphique faisant appel aux fonctions codées dans le fichier "projet.py"
 
 I- Dans le fichier "projet.py" on a les fonctions suivantes : 
-    - frameSplitter(file): prenant en argument un fichier texte contenant une ou plusieurs trames. Cette fonction sert à séparer les trames de
+  - frameSplitter(file): prenant en argument un fichier texte contenant une ou plusieurs trames. Cette fonction sert à séparer les trames de
     notre fichier "file" et à stocker chaque trame dans une liste. Elle renvoie une liste contenant les trames du fichier
     (toute ligne commençant par un offset à zéro annonce le début d'une nouvelle trame).
-
-    - frameChecker(frame): prenant en argument une liste contenant les lignes d'une trame qui sont chaqu'une stockée dans une liste de mots separés par un espace.
+  - frameChecker(frame): prenant en argument une liste contenant les lignes d'une trame qui sont chaqu'une stockée dans une liste de mots separés par un espace.
     Cette fonction vérifie que chaque ligne commence bien par un offset qui représente un chiffre hexadécimal codé sur plus de deux chiffres.
     Ensuite, on parcourt cette liste et on supprime toutes les valeurs textuelles et les chiffres héxadécimaux codés sur plus de deux chiffres qu'ils soient
     au début, milieu, fin de la ligne ou entre les lignes.
     Ensuite, elle vérifie qu'une ligne est bien complète avant de l'ajouter à la trame, c'est à dire le nombre d'octets requis (offset suivant - offset de la ligne actuelle ).
     Dans le cas d'une erreur on renvoie le numéro de la ligne contenant l'erreur pour l'afficher par la suite sur l'interface graphique.
-
-    - frameAnalyser(frame): cette fonction prend argument une trame (après vérification qu'elle est bien valide).
+- frameAnalyser(frame): cette fonction prend argument une trame (après vérification qu'elle est bien valide).
     Elle analyse l'enthete Ethernet, IPV4, UDP, DNS ou DHCP selon le numero de port destination.
     Pour l'enthete IPV4 avec option , on a traité uniquement les six options vues dans le cours pour le reste notre programme affiche un message "Unknown option".
     Notre programme ne traite que les protocols UDP et si la trame en contient un autre il renvoie un message indiquant que le protocole en question n'est pas pris en charge.
