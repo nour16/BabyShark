@@ -7,7 +7,6 @@ Le code source de notre programme BabyShark est sur deux fichiers:
 -Le fichier "test.py" contenant le code source pour l'interface graphique faisant appel aux fonctions codées dans le fichier "projet.py"
 
 I- Dans le fichier "projet.py" on a les fonctions suivantes : 
-
     - frameSplitter(file): prenant en argument un fichier texte contenant une ou plusieurs trames. Cette fonction sert à séparer les trames de
     notre fichier "file" et à stocker chaque trame dans une liste. Elle renvoie une liste contenant les trames du fichier
     (toute ligne commençant par un offset à zéro annonce le début d'une nouvelle trame).
